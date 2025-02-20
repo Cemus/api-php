@@ -35,129 +35,124 @@ URL : http://localhost/server/server.php/user
 
 1. Créer un utilisateur
 
-   Méthode : POST
-   URL : /user
-   Description : Crée un utilisateur avec un alias, un email et un mot de passe.
+Méthode : POST
+URL : /user
+Description : Crée un utilisateur avec un alias, un email et un mot de passe.
 
-   ### Requête
+### Requête
 
-   Le corps de la requête doit être au format JSON, par exemple :
+Le corps de la requête doit être au format JSON, par exemple :
 
-   ```json
-   {
-     "alias": "Paul",
-     "email": "paul@email.com",
-     "password": "zae4za8e4aze4zae6848za4eaz@@€@zeaea€zaeekzaeozake"
-   }
-   ```
+```json
+{
+  "alias": "Paul",
+  "email": "paul@email.com",
+  "password": "zae4za8e4aze4zae6848za4eaz@@€@zeaea€zaeekzaeozake"
+}
+```
 
-   ### Réponses
+### Réponses
 
-   Code 200 (Succès) : Utilisateur créé avec succès.
+Code 200 (Succès) : Utilisateur créé avec succès.
 
-   ```json
-   {
-     "message": "Utilisateur dzdzzddzd ajouté !",
-     "code response": 200
-   }
-   ```
+```json
+{
+  "message": "Utilisateur dzdzzddzd ajouté !",
+  "code response": 200
+}
+```
 
-   Code 400 (Données invalides) : Les données envoyées sont invalides ou incomplètes.
+Code 400 (Données invalides) : Les données envoyées sont invalides ou incomplètes.
 
-   ```json
-   {
-     "message": "Donnes non trouvees",
-     "code response": 400
-   }
-   ```
+```json
+{
+  "message": "Donnes non trouvees",
+  "code response": 400
+}
+```
 
-   Code 400 (Utilisateur existant) : L'email existe déjà dans la base de données.
+Code 400 (Utilisateur existant) : L'email existe déjà dans la base de données.
 
-   ```json
-   {
-     "message": "Existe deja",
-     "code response": 400
-   }
-   ```
+```json
+{
+  "message": "Existe deja",
+  "code response": 400
+}
+```
 
-   Code 500 (Erreur serveur) : Une erreur serveur est survenue.
+Code 500 (Erreur serveur) : Une erreur serveur est survenue.
 
-   ```json
-   {
-     "message": "Erreur serveur",
-     "code response": 500
-   }
-   ```
+```json
+{
+  "message": "Erreur serveur",
+  "code response": 500
+}
+```
 
-2. Récupérer la liste des utilisateurs
+2.Récupérer la liste des utilisateurs
+Méthode : GET
+URL : /users
+Description : Récupère la liste de tous les utilisateurs.
 
-   Méthode : GET
-   URL : /users
-   Description : Récupère la liste de tous les utilisateurs.
+### Réponses
 
-   ### Réponses
+Code 200 (Succès) : Retourne la liste des utilisateurs.
 
-   Code 200 (Succès) : Retourne la liste des utilisateurs.
+```json
+{
+  "status": "success",
+  "data": [
+    {
+      "alias": "JeanFun",
+      "email": "jean-fun@email.com"
+    }
+  ]
+}
+```
 
-   ```json
-   {
-     "status": "success",
-     "data": [
-       {
-         "alias": "JeanFun",
-         "email": "jean-fun@email.com"
-       }
-     ]
-   }
-   ```
+Code 200 (Aucun utilisateur) : Aucun utilisateur trouvé dans la base de données.
 
-   Code 200 (Aucun utilisateur) : Aucun utilisateur trouvé dans la base de données.
+```json
+{
+  "status": "success",
+  "message": "Personne dans le coin"
+}
+```
 
-   ```json
-   {
-     "status": "success",
-     "message": "Personne dans le coin"
-   }
-   ```
+Code 404 (Erreur) : Erreur lors de la récupération des utilisateurs.
 
-   Code 404 (Erreur) : Erreur lors de la récupération des utilisateurs.
+```json
+{
+  "status": "error",
+  "message": "Erreur"
+}
+```
 
-   ```json
-   {
-     "status": "error",
-     "message": "Erreur"
-   }
-   ```
+### Exemples de requêtes
 
-   ### Exemples de requêtes
+3.Tester l'ajout d'un utilisateur
+Utilisez Postman ou un autre outil (extension .rest) pour envoyer une requête POST.
+URL : http://localhost/server/server.php/user
+Corps de la requête en JSON :
 
-3. Tester l'ajout d'un utilisateur
-   Utilisez Postman ou un autre outil (extension .rest) pour envoyer une requête POST.
-   URL : http://localhost/server/server.php/user
+```json
+{
+  "alias": "paul_watson",
+  "email": "paul.watson@email.com",
+  "password": "dazijdazpiad@@@da@dzadizadjizad484z4d8a4zd84"
+}
+```
 
-   Corps de la requête en JSON :
+Vérifiez la réponse (Code 200 si l'utilisateur est ajouté avec succès). 4. Tester la récupération des utilisateurs
+Utilisez Postman ou un autre outil (.rest...) pour envoyer une requête GET.
+URL : http://localhost/users
+Vérifiez la réponse (Code 200 avec la liste des utilisateurs ou un message indiquantqu'il n'y en a pas).
+CORS (Cross-Origin Resource Sharing)
+L'API prend en charge les en-têtes CORS pour permettre aux clients externes de fairedes requêtes depuis un autre domaine. Les en-têtes CORS suivants sont utilisés dans lesréponses :
 
-   ```json
-   {
-     "alias": "paul_watson",
-     "email": "paul.watson@email.com",
-     "password": "dazijdazpiad@@@da@dzadizadjizad484z4d8a4zd84"
-   }
-   ```
-
-   Vérifiez la réponse (Code 200 si l'utilisateur est ajouté avec succès).
-
-   4. Tester la récupération des utilisateurs
-
-      Utilisez Postman ou un autre outil (.rest...) pour envoyer une requête GET.
-      URL : http://localhost/users
-      Vérifiez la réponse (Code 200 avec la liste des utilisateurs ou un message indiquant qu'il n'y en a pas).
-      CORS (Cross-Origin Resource Sharing)
-      L'API prend en charge les en-têtes CORS pour permettre aux clients externes de faire des requêtes depuis un autre domaine. Les en-têtes CORS suivants sont utilisés dans les réponses :
-
-   - Access-Control-Allow-Origin: same : Permet uniquement les requêtes provenant du même domaine.
-   - Access-Control-Allow-Methods: POST, GET : Les méthodes HTTP autorisées pour cette API.
-   - Access-Control-Allow-Headers: Content-Type, Access-Control-AllowHeaders, Authorization, X-Requested-With : Les en-têtes autorisés.
+- Access-Control-Allow-Origin: same : Permet uniquement les requêtes provenant du mêmedomaine.
+- Access-Control-Allow-Methods: POST, GET : Les méthodes HTTP autorisées pour cette API.
+- Access-Control-Allow-Headers: Content-Type, Access-Control-AllowHeaders, Authorization,X-Requested-With : Les en-têtes autorisés.
 
 ## Codes de réponse HTTP
 
