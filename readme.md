@@ -29,7 +29,7 @@ Exécutez le projet sur un serveur local, comme localhost:45555.
 ## URL
 
 L'API est accessible à l'URL suivante :
-URL : http://localhost/server/server.php/user
+URL : http://localhost/user
 
 ## EndPoints
 
@@ -134,7 +134,7 @@ Code 404 (Erreur) : Erreur lors de la récupération des utilisateurs.
 #### Tester l'ajout d'un utilisateur
 
 Utilisez Postman ou un autre outil (extension .rest) pour envoyer une requête POST.
-URL : http://localhost/server/server.php/user
+URL : http://localhost/user
 Corps de la requête en JSON :
 
 ```json
