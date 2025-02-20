@@ -90,6 +90,7 @@ URL : http://localhost/server/server.php/user
    ```
 
 2. Récupérer la liste des utilisateurs
+
    Méthode : GET
    URL : /users
    Description : Récupère la liste de tous les utilisateurs.
@@ -147,6 +148,7 @@ URL : http://localhost/server/server.php/user
    Vérifiez la réponse (Code 200 si l'utilisateur est ajouté avec succès).
 
    4. Tester la récupération des utilisateurs
+
       Utilisez Postman ou un autre outil (.rest...) pour envoyer une requête GET.
       URL : http://localhost/users
       Vérifiez la réponse (Code 200 avec la liste des utilisateurs ou un message indiquant qu'il n'y en a pas).
