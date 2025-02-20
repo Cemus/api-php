@@ -7,7 +7,7 @@ Cette API permet de gérer les utilisateurs dans une base de données via des re
 
 ## Table des matières
 
-- [Installation]
+- [Installation](#installation)
 - [Base URL]
 - [Authentification]
 - [EndPoints]
