@@ -1,0 +1,10 @@
+CREATE DATABASE user_collection CHARSET utf8mb4;
+USE user_collection;
+
+CREATE TABLE `user`(
+id_user INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+alias VARCHAR(50) NOT NULL,
+email VARCHAR(50) UNIQUE NOT NULL,
+`password` VARCHAR(100) NOT NULL
+)ENGINE=InnoDB;
+

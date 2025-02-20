@@ -1,0 +1,12 @@
+GET http://localhost:45555/api-php/server/server.php/users HTTP/1.1
+
+###
+
+POST http://localhost:45555/api-php/server/server.php/user HTTP/1.1
+content-type: application/json
+
+{
+    "alias": "dzdzzddzd",
+    "email": "truc@email.com",
+    "password":"84884848azdzadazdzzad"
+}
