@@ -10,11 +10,11 @@ Cette API permet de gérer les utilisateurs dans une base de données via des re
 - [Installation](#installation)
 - [URL](#url)
 - [EndPoints](#endpoints)
-- [Créer un utilisateur]
-- [Récupérer la liste des utilisateurs]
-- [Exemples de requêtes]
-- [CORS (Cross-Origin Resource Sharing)]
-- [Codes de réponse HTTP]
+- [Créer un utilisateur](#créer-un-utilisateur)
+- [Récupérer la liste des utilisateurs](#récupérer-la-liste-des-utilisateurs)
+- [Exemples de requêtes](#exemples-de-requêtes)
+- [CORS (Cross-Origin Resource Sharing)](#cors-cross-origin-resource-sharing)
+- [Codes de réponse HTTP](#codes-de-réponse-http)
 
 ## Installation
 
@@ -33,13 +33,13 @@ URL : http://localhost/server/server.php/user
 
 ## EndPoints
 
-1. Créer un utilisateur
+### Créer un utilisateur
 
 Méthode : POST
 URL : /user
 Description : Crée un utilisateur avec un alias, un email et un mot de passe.
 
-### Requête
+#### Requête
 
 Le corps de la requête doit être au format JSON, par exemple :
 
@@ -51,7 +51,7 @@ Le corps de la requête doit être au format JSON, par exemple :
 }
 ```
 
-### Réponses
+#### Réponses
 
 Code 200 (Succès) : Utilisateur créé avec succès.
 
@@ -89,12 +89,13 @@ Code 500 (Erreur serveur) : Une erreur serveur est survenue.
 }
 ```
 
-2.Récupérer la liste des utilisateurs
+#### Récupérer la liste des utilisateurs
+
 Méthode : GET
 URL : /users
 Description : Récupère la liste de tous les utilisateurs.
 
-### Réponses
+#### Réponses
 
 Code 200 (Succès) : Retourne la liste des utilisateurs.
 
@@ -130,7 +131,8 @@ Code 404 (Erreur) : Erreur lors de la récupération des utilisateurs.
 
 ### Exemples de requêtes
 
-3.Tester l'ajout d'un utilisateur
+#### Tester l'ajout d'un utilisateur
+
 Utilisez Postman ou un autre outil (extension .rest) pour envoyer une requête POST.
 URL : http://localhost/server/server.php/user
 Corps de la requête en JSON :
@@ -143,12 +145,17 @@ Corps de la requête en JSON :
 }
 ```
 
-Vérifiez la réponse (Code 200 si l'utilisateur est ajouté avec succès). 4. Tester la récupération des utilisateurs
+Vérifiez la réponse (Code 200 si l'utilisateur est ajouté avec succès).
+
+#### Tester la récupération des utilisateurs
+
 Utilisez Postman ou un autre outil (.rest...) pour envoyer une requête GET.
 URL : http://localhost/users
 Vérifiez la réponse (Code 200 avec la liste des utilisateurs ou un message indiquantqu'il n'y en a pas).
-CORS (Cross-Origin Resource Sharing)
-L'API prend en charge les en-têtes CORS pour permettre aux clients externes de fairedes requêtes depuis un autre domaine. Les en-têtes CORS suivants sont utilisés dans lesréponses :
+
+## CORS (Cross-Origin Resource Sharing)
+
+L'API prend en charge les en-têtes CORS pour permettre aux clients externes de fairedes requêtes depuis un autre domaine. Les en-têtes CORS suivants sont utilisés dans les réponses :
 
 - Access-Control-Allow-Origin: same : Permet uniquement les requêtes provenant du mêmedomaine.
 - Access-Control-Allow-Methods: POST, GET : Les méthodes HTTP autorisées pour cette API.
